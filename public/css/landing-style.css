@@ -1,0 +1,153 @@
+html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(to right, #f8fbff, #eef5ff);
+            display: flex;
+            align-items: center;
+        }
+        
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .feature-card {
+            border: none;
+            border-radius: 16px;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: #223C5D;
+            color: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #223C5D;
+        }
+
+        .btn-primary {
+            --bs-btn-color: #fff;
+            --bs-btn-bg: #223C5D;
+            --bs-btn-border-color: #223C5D;
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: #0b5ed7;
+            --bs-btn-hover-border-color: #0a58ca;
+            --bs-btn-focus-shadow-rgb: 49, 132, 253;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: #0a58ca;
+            --bs-btn-active-border-color: #0a53be;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #fff;
+            --bs-btn-disabled-bg: #223C5D;
+            --bs-btn-disabled-border-color: #223C5D;
+            border: 1px solid transparent !important;
+        }
+        .btn-primary:hover {
+            background-color: white !important;
+            border: 2px solid #223C5D !important;
+            color: #223C5D !important;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #223C5D !important;
+            color: white !important;
+        }
+        .btn-outline-primary {
+            --bs-btn-color: #223C5D;
+            --bs-btn-border-color: #223C5D;
+            --bs-btn-hover-color: #fff;
+            --bs-btn-hover-bg: #223C5D;
+            --bs-btn-hover-border-color: #223C5D;
+            --bs-btn-focus-shadow-rgb: 13, 110, 253;
+            --bs-btn-active-color: #fff;
+            --bs-btn-active-bg: #223C5D;
+            --bs-btn-active-border-color: #223C5D;
+            --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            --bs-btn-disabled-color: #223C5D;
+            --bs-btn-disabled-bg: transparent;
+            --bs-btn-disabled-border-color: #223C5D;
+            --bs-gradient: none;
+        }
+
+        .text-blue {
+            color: #223C5D !important;
+        }
+
+        body {
+            background-color: #f4f7fb;
+        }
+
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .login-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .login-title {
+            color: #223C5D;
+            font-weight: 700;
+        }
+
+        .form-control {
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        .login-logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .text-blue {
+            color: #223C5D !important;
+        }
+
+        .btn-primary {
+            background-color: #223C5D !important;
+            border-color: #223C5D !important;
+        }
+
+        .btn-primary:hover {
+            background-color: white !important;
+            border-color: #223C5D !important;
+            color: #223C5D !important;
+        }
+
+        .btn-outline-primary {
+            color: #223C5D !important;
+            border-color: #223C5D !important;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #223C5D !important;
+            color: white !important;
+        }
