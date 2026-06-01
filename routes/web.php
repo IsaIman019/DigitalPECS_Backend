@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AnakController;
 use App\Http\Controllers\GuruController;
-use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,5 +20,6 @@ Route::delete('/master-users/{id}/delete', [UsersController::class, 'destroy']);
 
 Route::get('/master-anak', [AnakController::class, 'index'])->name('master-anak');
 Route::get('/master-guru', [GuruController::class, 'index'])->name('master-guru');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::delete('/master-users/{id}/delete', [UsersController::class, 'destroy']);
+
 

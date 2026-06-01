@@ -154,7 +154,7 @@
                         <select name="status"
                                 class="form-control">
                             <option value="">
-                                -- Pilih Role --
+                                -- Pilih Status --
                             </option>
 
                             <option value="ACTIVE">
