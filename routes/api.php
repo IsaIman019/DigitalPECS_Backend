@@ -11,11 +11,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     // ROUTE ROLE Anak
-    Route::get('/modules', [ModuleController::class, 'index']);
+    
     
     // ROUTE ROLE Guru
     Route::get('/list-siswa', [AnakController::class, 'listSiswa']);
-    Route::post('/modules', [ModuleController::class, 'store']);
+    Route::post('/store-modules', [ModuleController::class, 'store']);
+    Route::delete('/delete-modules/{id}', [ModuleController::class, 'destroy']);
 
     // ROUTE ROLE Orang Tua
     Route::get('/list-anak', [AnakController::class, 'listAnak']);
@@ -25,5 +26,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/list-orangtua', [AnakController::class, 'listOrangTua']);
     Route::get('/detail-anak/{id}', [AnakController::class, 'detail']);
     Route::delete('/delete-anak/{id}', [AnakController::class, 'destroy']);
+    Route::get('/list-modules', [ModuleController::class, 'index']);
+    
+
 
 });
