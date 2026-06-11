@@ -56,9 +56,8 @@ class ModuleController extends Controller
             ], 404);
         }
 
-        // Hapus icon jika ada
-        if ($module->icon && \Storage::disk('public')->exists($module->icon)) {
-            \Storage::disk('public')->delete($module->icon);
+        if ($module->icon) {
+            Storage::disk('public')->delete($module->icon);
         }
 
         $module->delete();

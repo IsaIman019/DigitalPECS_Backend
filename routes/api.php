@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\AnakController;
 use App\Http\Controllers\Api\ModuleController;
+use App\Http\Controllers\Api\ModuleItemController;
 
 
 Route::post('/login', [AuthController::class, 'login']);
@@ -27,7 +28,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/detail-anak/{id}', [AnakController::class, 'detail']);
     Route::delete('/delete-anak/{id}', [AnakController::class, 'destroy']);
     Route::get('/list-modules', [ModuleController::class, 'index']);
-    
+    Route::get('/modules/{module}/items', [ModuleItemController::class, 'index']);
+    Route::post('/module-items', [ModuleItemController::class, 'store']);
+    Route::put('/module-items/{id}', [ModuleItemController::class, 'update']);
+    Route::delete('/module-items/{id}', [ModuleItemController::class, 'destroy']);
+        
 
 
 });
