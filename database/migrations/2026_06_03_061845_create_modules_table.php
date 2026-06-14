@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('icon')->nullable();
+            $table->string('icon');
             $table->foreignId('created_by')
                 ->nullable()
                 ->constrained('users')

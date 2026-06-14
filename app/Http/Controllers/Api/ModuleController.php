@@ -11,7 +11,18 @@ class ModuleController extends Controller
 {
     public function index()
     {
-        $modules = Module::orderBy('nama')->get();
+        $modules = Module::orderBy('nama')->get()->map(function ($module) {
+            return [
+                'id' => $module->id,
+                'nama' => $module->nama,
+                'icon' => $module->icon
+                    ? asset('storage/' . $module->icon)
+                    : null,
+                'created_by' => $module->created_by,
+                'created_at' => $module->created_at,
+                'updated_at' => $module->updated_at,
+            ];
+        });
 
         return response()->json([
             'success' => true,

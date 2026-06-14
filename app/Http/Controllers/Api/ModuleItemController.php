@@ -17,7 +17,14 @@ class ModuleItemController extends Controller
         $items = ModuleItem::where('module_id', $module)
             ->where('anak_id', $request->anak_id)
             ->orderBy('created_at')
-            ->get();
+            ->get()
+            ->map(function ($item) {
+                $item->image_url = $item->gambar
+                    ? asset('storage/' . $item->gambar)
+                    : null;
+
+                return $item;
+            });
 
         return response()->json([
             'success' => true,
@@ -38,12 +45,16 @@ class ModuleItemController extends Controller
             $gambar = $request->file('gambar')->store('module-items', 'public');
         }
         $item = ModuleItem::create([
-            'module_id' => $module, 
+            'module_id' => $module,
             'anak_id' => $request->anak_id,
             'gambar' => $gambar,
             'text' => $request->text,
             'created_by' => auth()->id(),
         ]);
+
+        $item->image_url = $item->gambar
+            ? asset('storage/' . $item->gambar)
+            : null;
 
         return response()->json([
             'success' => true,

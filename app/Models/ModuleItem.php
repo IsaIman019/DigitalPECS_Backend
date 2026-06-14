@@ -13,6 +13,14 @@ class ModuleItem extends Model
         'text',
         'created_by',
     ];
+    protected $appends = ['image_url'];
+
+    public function getImageUrlAttribute()
+    {
+        return $this->gambar
+            ? asset('storage/' . $this->gambar)
+            : null;
+    }
 
     public function module()
     {
