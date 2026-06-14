@@ -4,15 +4,14 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\AnakController;
 use App\Http\Controllers\Api\ModuleController;
 use App\Http\Controllers\Api\ModuleItemController;
-
+use App\Http\Controllers\Api\BelajarController;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
 
     // ROUTE ROLE Anak
-    
+    Route::get('/bermain/{module}', [BelajarController::class, 'index']);
     
     // ROUTE ROLE Guru
     Route::get('/list-siswa', [AnakController::class, 'listSiswa']);
@@ -29,10 +28,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/delete-anak/{id}', [AnakController::class, 'destroy']);
     Route::get('/list-modules', [ModuleController::class, 'index']);
     Route::get('/modules/{module}/items', [ModuleItemController::class, 'index']);
-    Route::post('/module-items', [ModuleItemController::class, 'store']);
-    Route::put('/module-items/{id}', [ModuleItemController::class, 'update']);
+    Route::post('/modules/{module}/items', [ModuleItemController::class, 'store']);
     Route::delete('/module-items/{id}', [ModuleItemController::class, 'destroy']);
-        
-
+    Route::get('/profile', [AuthController::class, 'profile']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 
 });

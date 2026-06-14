@@ -114,4 +114,42 @@ class AuthController extends Controller
 
         }
     }
+    public function profile()
+    {
+        $user = auth()->user();
+
+        if ($user->role == 'Anak') {
+
+            $user->load('ortu');
+
+            return response()->json([
+                'success' => true,
+                'data' => [
+                    'role' => $user->role,
+                    'username' => $user->username,
+                    'email' => $user->email,
+                    'orang_tua' => [
+                        'username' => $user->ortu?->username,
+                        'nohp' => $user->ortu?->nohp,
+                        'alamat' => $user->ortu?->alamat,
+                    ]
+                ]
+            ]);
+        }
+
+        
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'role' => $user->role,
+                'username' => $user->username,
+                'email' => $user->email,
+                'nohp' => $user->nohp,
+                'alamat' => $user->alamat,
+            ]
+        ]);
+    }
+    
+
+    
 }
